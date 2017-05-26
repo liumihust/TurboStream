@@ -7,4 +7,6 @@ The contributions of this paper are summarized as follows:
 2.we pay our attention to both the runtime traffic patterns among the tasks and the runtime workload balance,thus provide a more efficient assignment.
 3.we will not distribute the workers to all the node, but only to the nodes selected by our algorithm to void unnecessary distribution of the topology and gain load balance in multi-topology scenario.
 4.we reduce the number of times of data copy and provide a novel protocol for consumer and producer when Netty transfers data between the workers.the improved Netty  accelerates the communication significantly. 
+![highload](https://github.com/liumihust/gitTset/blob/master/highload.PNG)
+![lowload](https://github.com/liumihust/gitTset/blob/master/lowload.PNG)
 

@@ -1,4 +1,5 @@
-#Traffic-efficient-Storm
+Traffic-efficient-Storm
+=
 
 ##Introduction of our undergoing project
 Storm provides a Even-Scheduler as default scheduler, which try to fairly distribute the executors and workers to the cluster by the round-robin strategy. The default scheduler neither take the communication patterns among the tasks into account nor consider the load balance, which may lead to high processing latency and low throughput. We provide a adaptive group-based scheduler, which would try to assign the communicated tasks to one worker process, while taking into account the runtime workload at the same time. Further, we provide a new protocol for  Netty, which is the IPC framework of Storm, to accelerate the IPC of workers.  

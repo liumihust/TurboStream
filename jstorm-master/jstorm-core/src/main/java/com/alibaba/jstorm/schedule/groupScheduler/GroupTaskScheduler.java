@@ -44,7 +44,7 @@ public class GroupTaskScheduler {
 
     private DefaultTopologyAssignContext context;
 
-    MultiLevelKLTaskTopologyPartitioner partitioner;// = new MultiLevelKLTaskTopologyPartitioner();
+    MultiLevelTaskTopologyGrouping partitioner;// = new MultiLevelKLTaskTopologyPartitioner();
     private Map<Integer,ResourceWorkerSlot> findWorkers;
     private List<ResourceWorkerSlot> workers;
 
@@ -67,7 +67,7 @@ public class GroupTaskScheduler {
             }
         }
 
-        partitioner = new MultiLevelKLTaskTopologyPartitioner(context, workers, workerNum, tasks);
+        partitioner = new MultiLevelTaskTopologyGrouping(context, workers, workerNum, tasks);
         findWorkers = partitioner.getWorkerAssinment();
 
         //after calculate the task the assignment ,first to assign the TM,then the assign() will be called

@@ -5,7 +5,7 @@ Introduction of our undergoing project
 -
 Storm provides a Even-Scheduler as default scheduler, which try to fairly distribute the executors and workers to the cluster by the round-robin strategy. The default scheduler neither take the communication patterns among the tasks into account nor consider the load balance, which may lead to high processing latency and low throughput. We provide a adaptive group-based scheduler, which would try to assign the communicated tasks to one worker process, while taking into account the runtime workload at the same time. Further, we provide a new protocol for  Netty, which is the IPC framework of Storm, to accelerate the IPC of workers.  
 
-The contributions of this paper are summarized as follows:
+The contributions of this paper
 -
 1.We propose our Group-based Scheduler for scheduling a Storm topology, which can group the highly communicating tasks together as a one, which will be assigned to the same slot not just the same node and thus reduces the inter-worker and inter-node traffic.   
 2.We pay our attention to both the runtime traffic patterns among the tasks and the runtime workload balance,thus provide a more efficient assignment.   

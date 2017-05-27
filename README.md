@@ -15,14 +15,14 @@ The contributions of this paper
 Evaluation
 -
 The experiments following is on the Yahoo workload(https://github.com/yahoo/storm-perf-test/).   
-The high load scenarios,the speed of data source is about 2.5WPS,the size of the each message is about 100B.   
+The high load scenarios,the speed of data source is about 2.5WTPS,the size of the each message is about 100B.   
 We record the average processing time of each message in the topology:   
 two workers in two nodes:   
 ![highload](https://github.com/liumihust/gitTset/blob/master/1.PNG)
 two workers in one node:   
 ![highload](https://github.com/liumihust/gitTset/blob/master/2.PNG)  
 
-While in the low load scenarios,the speed of data source is about 1WPS,the size of the each message is the same 100B.
+While in the low load scenarios,the speed of data source is about 1WTPS,the size of the each message is the same 100B.
 two workers in two nodes: 
 ![lowload](https://github.com/liumihust/gitTset/blob/master/3.PNG)  
 two workers in one node:   

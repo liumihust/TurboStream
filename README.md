@@ -10,7 +10,7 @@ The contributions of this paper
 1) To our best knowledge, we are the first  to propose a general framework to solve operator placement  for BDSP and implement it on current popular distribute stream procesing system. We propose our Group-based strategy for BDSP, which can group the highly-communicating operator instances together as one,  which will be assigned to the same worker process and thus reduces the inter-process traffic.   
 2) We modeling the runtime relationship of operators with runtime traffic and workload. Better assignment will achieve as the  input workload vary. The model works not only for online but also for offline while many solutions in related works is only for either online or online.   
 3) We design a  pre-allocated off-heap ring buffer to reduce the number of intermediate memory copies when data is transferred between two worker process, which can improve the efficiency of IPC significantly.   
-4)Based on the ring buffer, we provide a novel protocol for consumer and producer when messages transferred between the worker process. This protocol can be applied to all BDSP when transferring message among worker process. 
+4) Based on the ring buffer, we provide a novel protocol for consumer and producer when messages transferred between the worker process. This protocol can be applied to all BDSP when transferring message among worker process. 
 
 
 Evaluation(work 1&2 have been implemented,the work 3&4 is undergoing)

@@ -1,4 +1,4 @@
-Traffic-efficient Stream processing system
+Traffic-efficient Stream Processing System
 =
 
 Introduction of our undergoing project

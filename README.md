@@ -1,9 +1,6 @@
 Towards Low-Latency Data Stream Processing
 =
 
-Introduction of our undergoing project
--
-
 The contributions of this project
 -
 1) We conduct a deep investigation about the latency of each stage of DSP topology, and find the proportion of inter-operator latency in total event processing latency is up to 86.88\%.

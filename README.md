@@ -1,16 +1,18 @@
-Traffic-efficient Stream Processing System
+Towards Low-Latency Data Stream Processing
 =
 
 Introduction of our undergoing project
 -
-Storm provides a Even-Scheduler as default scheduler, which try to fairly distribute the executors and workers to the cluster by the round-robin strategy. The default scheduler neither take the communication patterns among the tasks into account nor consider the load balance, which may lead to high processing latency and low throughput. We provide a adaptive group-based scheduler, which would try to assign the communicated tasks to one worker process, while taking into account the runtime workload at the same time. Further, we provide a new protocol for Netty, which is the IPC framework of Storm, to accelerate the IPC of workers.  
 
-The contributions of this paper
+The contributions of this project
 -
-1) To our best knowledge, we are the first  to propose a general framework to solve operator placement  for BDSP and implement it on current popular distribute stream procesing system. We propose our Group-based strategy for BDSP, which can group the highly-communicating operator instances together as one,  which will be assigned to the same worker process and thus reduces the inter-process traffic.   
-2) We modeling the runtime relationship of operators with runtime traffic and workload. Better assignment will achieve as the  input workload vary. The model works not only for online but also for offline while many solutions in related works is only for either online or online.   
-3) We design a  pre-allocated off-heap ring buffer to reduce the number of intermediate memory copies when data is transferred between two worker process, which can improve the efficiency of IPC significantly.   
-4) Based on the ring buffer, we provide a novel protocol for consumer and producer when messages transferred between the worker process. This protocol can be applied to all BDSP when transferring message among worker process. 
+1) We conduct a deep investigation about the latency of each stage of DSP topology, and find the proportion of inter-operator latency in total event processing latency is up to 86.88\%.
+	
+2) We design the OSRingBuffer in IPC to reduce the times of memory copy and the waiting time of each single message when transmitting messages between the workers inside one node. Thus, the end-to-end latency of IPC decreases by 45.94\%(at least). To the best of our knowledge, we are the first to use the off-heap ring bytebuffer to accelerate the message transmission between JVM.
+	
+3) We further propose a general Group-based modeling framework, which uses the data dependencies in topology or the runtime traffic information to integrate the communicating operator instances before scheduling and BFS-based algorithm to assign the integrated operator instances. With this framework, scheduler can achieve both the load balance and the reduction in inter-node traffic.
+	
+4) With OSRingBuffer in IPC and the Group-based modeling framework, we integrate them into JStorm, termed TurboStream. In our experiments, the total event processing latency can decrease by 77.84\%.
 
 
 Evaluation(work 1&2 have been implemented,the work 3&4 is undergoing)

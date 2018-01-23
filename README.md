@@ -20,4 +20,4 @@ The experiments following is on the Yahoo workload(https://github.com/stormproce
 
 Note:
 -
-Current version of TurboStream is updated about 8 months before, and he newest version of TurboStream will be updated as soon as possible.
+Current version of TurboStream is updated about 8 months before, and the newest version of TurboStream will be updated as soon as possible.

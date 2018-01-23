@@ -18,3 +18,6 @@ The experiments following is on the Yahoo workload(https://github.com/stormproce
 
 ![lowload](https://github.com/liumihust/gitTset/blob/master/evaluation-latency-2.PNG)  
 
+Note:
+-
+Current version of TurboStream is updated about 8 months before, and he newest version of TurboStream will be updated as soon as possible.

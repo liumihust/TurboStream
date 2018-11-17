@@ -23,5 +23,6 @@ Note:
 Current version of TurboStream is updated about 8 months before, and the newest version of TurboStream will be updated as soon as possible.
 
 ## The paper of this work has been accepted by 2018 IEEE 38th International Conference on Distributed Computing Systems (ICDCS) 
+https://ieeexplore.ieee.org/document/8416362
 
 ICDCS: CCF B & Top 80 Conference of Computer Science
